@@ -56,22 +56,6 @@ sudo apt-get install postgresql postgresql-client
 
 Conectarse a la base de datos y crear la tabla necesaria en PostgreSQL:
 
-### Base de Datos PostgreSQL
-
-**Instalación**
-
-1. **Actualizar los paquetes del sistema:**
-
-   ```bash
-   sudo apt-get update
-   ```
-
-2. **Instalar PostgreSQL y PostgreSQL Client:**
-
-   ```bash
-   sudo apt-get install postgresql postgresql-client
-   ```
-
 #### Configuración Inicial
 
 1. **Iniciar el servidor PostgreSQL:**
