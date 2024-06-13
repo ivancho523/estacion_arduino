@@ -23,6 +23,7 @@ Python 3: Asegúrate de tener instalado Python 3 en tu sistema.
 ```
 
 **Configuración**
+
 Habilitar Mosquitto como servicio:
 ```bash
     sudo systemctl enable mosquitto
@@ -100,7 +101,7 @@ Conectarse a la base de datos y crear la tabla necesaria en PostgreSQL:
    GRANT ALL PRIVILEGES ON DATABASE datos_estacion TO usuario;
    ```
 
-Aquí, `datos_estacion` es el nombre de la base de datos y `karen` es el nombre de usuario con privilegios para acceder y manipular la base de datos.
+Aquí, `datos_estacion` es el nombre de la base de datos y `usuario` es el nombre de usuario con privilegios para acceder y manipular la base de datos.
 
 3. **Conectarse a la base de datos `datos_estacion`:**
 
