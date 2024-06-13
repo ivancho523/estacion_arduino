@@ -112,8 +112,8 @@ Conectarse a la base de datos y crear la tabla necesaria en PostgreSQL:
 
    ```sql
    CREATE DATABASE datos_estacion;
-   CREATE USER karen WITH ENCRYPTED PASSWORD '12345';
-   GRANT ALL PRIVILEGES ON DATABASE datos_estacion TO karen;
+   CREATE USER karen WITH ENCRYPTED PASSWORD 'tucontraseña';
+   GRANT ALL PRIVILEGES ON DATABASE datos_estacion TO usuario;
    ```
 
 Aquí, `datos_estacion` es el nombre de la base de datos y `karen` es el nombre de usuario con privilegios para acceder y manipular la base de datos.
@@ -152,7 +152,7 @@ Para verificar que PostgreSQL está instalado y configurado correctamente, puede
 - **Iniciar sesión en PostgreSQL como usuario creado:**
 
   ```bash
-  psql -h localhost -U karen datos_estacion
+  psql -h localhost -U usuario datos_estacion
   ```
 
   Se te solicitará que ingreses la contraseña que estableciste para el usuario `karen`.
