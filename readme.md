@@ -8,7 +8,42 @@ Requisitos Previos
 
 Python 3: Asegúrate de tener instalado Python 3 en tu sistema.
 
-### Servidor MQTT (Mosquitto)
+
+## Instrucciones para Replicar el Proyecto
+
+### Paso 1: Clonar el Repositorio
+
+1. **Clona este repositorio en tu máquina local:**
+
+   Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio desde GitHub:
+
+   ```bash
+   git clone https://github.com/ivancho523/estacion_arduino.git
+   ```
+
+   Esto creará una copia local del repositorio en tu directorio actual.
+
+### Paso 2: Crear un Entorno Virtual
+
+2. **Crea un entorno virtual:**
+
+   Es recomendable utilizar un entorno virtual para gestionar las dependencias del proyecto. Para crear un entorno virtual, navega hasta el directorio del proyecto clonado y ejecuta los siguientes comandos:
+
+   ```bash
+   cd estacion_arduino
+   python -m venv entorno
+   ```
+
+   Esto creará un directorio llamado `entorno` en tu proyecto.
+   
+En Linux:
+
+     ```bash
+     source entorno/bin/activate
+     ```
+
+
+### Paso 3: Configuración del Servidor MQTT con Mosquitto
 
 #### Instalación
 
@@ -41,7 +76,7 @@ Verificar el estado de Mosquitto:
     sudo systemctl status mosquitto
 ```
 
-### Base de Datos PostgreSQL
+### Paso 4: Configuración de la Base de Datos PostgreSQL
 
 **Instalación**
 
@@ -156,27 +191,11 @@ Para verificar que PostgreSQL está instalado y configurado correctamente, puede
   \q
   ```
 
-**Ejecución de la Interfaz Web**
+### Paso 5: Ejecución de la Interfaz Gráfica
 
-Descarga el Código:
-
-**Paso 1: Clonar el Repositorio**
-
-Clona este repositorio en tu máquina local:
-
-Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio desde GitHub:
-
-```bash
-git clone https://github.com/tu_usuario/monitoreo-calidad-aire.git
-```
-Esto creará una copia local del repositorio en tu directorio actual.
-
-**Paso 2: Instalación de Dependencias**
+**Instalación de Dependencias**
 
 Instala las dependencias necesarias:
-
-Desde la raíz del repositorio clonado, instala las bibliotecas Python requeridas ejecutando:
-
 ```bash
 pip install streamlit pandas plotly pytz
 ```
@@ -195,3 +214,16 @@ cd monitoreo-calidad-aire
 ```bash
 streamlit run interfazfinal.py
 ```
+### Información del Servidor
+
+El servidor utilizado para este proyecto tiene la siguiente configuración:
+
+```plaintext
+ Ubuntu 24.04 LTS
+```
+
+
+
+
+
+
