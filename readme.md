@@ -89,10 +89,10 @@ Conectarse a la base de datos y crear la tabla necesaria en PostgreSQL:
 3. **Crear una nueva contraseña para el usuario `postgres`:**
 
    ```sql
-   ALTER USER postgres WITH PASSWORD 'tu_nueva_contraseña';
+   ALTER USER postgres WITH PASSWORD 'tucontraseña';
    ```
 
-   Reemplaza `tu_nueva_contraseña` con la contraseña deseada.
+   Reemplaza `tucontraseña` con la contraseña deseada.
 
 4. **Salir de la consola de PostgreSQL:**
 
