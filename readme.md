@@ -17,9 +17,9 @@ Python 3: Asegúrate de tener instalado Python 3 en tu sistema.
 
    Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio desde GitHub:
 
-   ```bash
+```bash
    git clone https://github.com/ivancho523/estacion_arduino.git
-   ```
+```
 
    Esto creará una copia local del repositorio en tu directorio actual.
 
@@ -29,18 +29,18 @@ Python 3: Asegúrate de tener instalado Python 3 en tu sistema.
 
    Es recomendable utilizar un entorno virtual para gestionar las dependencias del proyecto. Para crear un entorno virtual, navega hasta el directorio del proyecto clonado y ejecuta los siguientes comandos:
 
-   ```bash
+```bash
    cd estacion_arduino
    python -m venv entorno
-   ```
+ ```
 
    Esto creará un directorio llamado `entorno` en tu proyecto.
    
 En Linux:
 
-     ```bash
+```bash
      source entorno/bin/activate
-     ```
+```
 
 
 ### Paso 3: Configuración del Servidor MQTT con Mosquitto
