@@ -54,8 +54,6 @@ Verificar el estado de Mosquitto:
 sudo apt-get install postgresql postgresql-client
    ```
 
-Para incluir instrucciones sobre cómo descargar e iniciar PostgreSQL en tu README de GitHub, sigue estos pasos:
-
 Conectarse a la base de datos y crear la tabla necesaria en PostgreSQL:
 
 ### Base de Datos PostgreSQL
