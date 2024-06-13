@@ -32,7 +32,9 @@ Habilitar Mosquitto como servicio:
     sudo systemctl start mosquitto
 ```
 **Verificación**
+
 Para verificar que Mosquitto está funcionando correctamente, puedes ejecutar los siguientes comandos:
+
 Verificar el estado de Mosquitto:
 ```bash
     sudo systemctl status mosquitto
@@ -40,7 +42,7 @@ Verificar el estado de Mosquitto:
 
 ### Base de Datos PostgreSQL
 
-#### Instalación
+**Instalación**
 
 1. **Actualizar los paquetes del sistema:**
 
@@ -48,15 +50,17 @@ Verificar el estado de Mosquitto:
    sudo apt-get update
 
 **Instalar PostgreSQL y PostgreSQL Client:**
+   ```bash
 sudo apt-get install postgresql postgresql-client
+   ```
+
 Para incluir instrucciones sobre cómo descargar e iniciar PostgreSQL en tu README de GitHub, sigue estos pasos:
 
-Claro, aquí está la sección actualizada para incluir cómo crear la base de datos, conectarse a ella y crear la tabla necesaria en PostgreSQL:
+Conectarse a la base de datos y crear la tabla necesaria en PostgreSQL:
 
-```markdown
 ### Base de Datos PostgreSQL
 
-#### Instalación
+**Instalación**
 
 1. **Actualizar los paquetes del sistema:**
 
@@ -114,7 +118,7 @@ Claro, aquí está la sección actualizada para incluir cómo crear la base de d
    GRANT ALL PRIVILEGES ON DATABASE datos_estacion TO karen;
    ```
 
-   Aquí, `datos_estacion` es el nombre de la base de datos y `karen` es el nombre de usuario con privilegios para acceder y manipular la base de datos.
+Aquí, `datos_estacion` es el nombre de la base de datos y `karen` es el nombre de usuario con privilegios para acceder y manipular la base de datos.
 
 3. **Conectarse a la base de datos `datos_estacion`:**
 
@@ -135,7 +139,7 @@ Claro, aquí está la sección actualizada para incluir cómo crear la base de d
    );
    ```
 
-   Esta tabla almacenará los datos de temperatura, humedad, dióxido de carbono, monóxido de carbono y ozono junto con su fecha y hora correspondiente.
+Esta tabla almacenará los datos de temperatura, humedad, dióxido de carbono, monóxido de carbono y ozono junto con su fecha y hora correspondiente.
 
 5. **Salir de la consola de PostgreSQL:**
 
@@ -170,29 +174,41 @@ Para verificar que PostgreSQL está instalado y configurado correctamente, puede
   ```
 
 **Ejecución de la Interfaz Web**
+
 Descarga el Código:
-Paso 1: Clonar el Repositorio
+
+**Paso 1: Clonar el Repositorio**
+
 Clona este repositorio en tu máquina local:
+
 Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio desde GitHub:
+
 ```bash
 git clone https://github.com/tu_usuario/monitoreo-calidad-aire.git
 ```
 Esto creará una copia local del repositorio en tu directorio actual.
+
 **Paso 2: Instalación de Dependencias**
+
 Instala las dependencias necesarias:
 
 Desde la raíz del repositorio clonado, instala las bibliotecas Python requeridas ejecutando:
+
 ```bash
 pip install streamlit pandas plotly pytz
 ```
 **Ejecuta la interfaz gráfica:**
 
 Una vez que todas las dependencias estén instaladas y la base de datos esté configurada correctamente, puedes ejecutar la interfaz gráfica utilizando Streamlit. 
+
 Navega al directorio donde clonaste el repositorio:
+
 ```bash
 cd monitoreo-calidad-aire
 ```
+
 **Ejecuta la interfaz web con Streamlit:**
+
 ```bash
 streamlit run interfazfinal.py
 ```
