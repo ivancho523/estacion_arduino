@@ -221,6 +221,79 @@ El servidor utilizado para este proyecto tiene la siguiente configuración:
 ```plaintext
  Ubuntu 24.04 LTS
 ```
+###  Ejecutar el proyecto como un servicio de sistema (daemon) en Ubuntu 24.04 LTS.
+
+Esto garantizará que lan interfaz de monitoreo de calidad del aire se inicie automáticamente al arrancar el sistema y que se gestione de manera adecuada como un proceso de fondo.
+### Paso 1: Crear el Archivo de Servicio
+
+Es importante crear un archivo de servicio systemd. Este archivo le indicará al sistema cómo manejar la interfaz como un servicio.
+
+1. En el editor de texto como `nano` crear el archivo de servicio:
+
+   ```bash
+   sudo nano /etc/systemd/system/calidad_aire.service
+   ```
+
+2. Dentro del editor, añadir el siguiente contenido al archivo `calidad_aire.service`. Ajustar los valores según sea necesario (por ejemplo, la ruta del entorno virtual, el archivo Python que ejecuta la aplicación, etc.):
+
+   ```plaintext
+   [Unit]
+   Description=Streamlit App Service
+   After=network.target
+
+   [Service]
+   User=root
+   WorkingDirectory=/root/tesina
+   Environment="PATH=/root/tesina/entornotesina/bin"
+   ExecStart=/root/tesina/entornotesina/bin/streamlit run /root/tesina/interfazfinalpruebafinal.py
+   Restart=always
+   RestartSec=3
+
+   [Install]
+   WantedBy=multi-user.target
+
+   ```
+
+   - **Description**: Descripción del servicio.
+   - **User** y **Group**: El usuario y grupo bajo los cuales se ejecutará el servicio.
+   - **WorkingDirectory**: Directorio de trabajo donde se encuentra el proyecto.
+   - **Environment**: Ruta al entorno virtual donde están instaladas las dependencias de Python.
+   - **ExecStart**: Comando para iniciar la aplicación. Es importante usar la ruta completa al intérprete de Python y al script de inicio.
+   - **Restart**: Indica que el servicio se reiniciará automáticamente en caso de fallo.
+### Paso 2: Configurar y Habilitar el Servicio
+
+Una vez creado el archivo de servicio, se necesita recargar las configuraciones de systemd y luego iniciar el servicio:
+
+1. Recargar las configuraciones de systemd para que reconozca el nuevo servicio:
+
+   ```bash
+   sudo systemctl daemon-reload
+   ```
+
+2. Iniciar el servicio para comprobar que funciona correctamente:
+
+   ```bash
+   sudo systemctl start calidad_aire.service
+   ```
+
+3. Verificar el estado del servicio para asegurar que esté corriendo sin errores:
+
+   ```bash
+   sudo systemctl status calidad_aire.service
+   ```
+
+   - El estado debe estar activo (`active`) y no deben aparecer errores listados.
+
+### Paso 3: Habilitar el Inicio Automático
+
+Finalmente, habilitar el servicio para que se inicie automáticamente cada vez que el sistema se inicie:
+
+```bash
+sudo systemctl enable calidad_aire.service
+```
+
+### Notas Adicionales
+- Se puede utilizar `sudo systemctl stop calidad_aire.service` para detener el servicio y `sudo systemctl restart calidad_aire.service` para reiniciarlo después de realizar cambios en la aplicación.
 
 
 
