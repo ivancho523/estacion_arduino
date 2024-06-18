@@ -238,19 +238,23 @@ Es importante crear un archivo de servicio systemd. Este archivo le indicará al
 
    ```plaintext
    [Unit]
-   Description=Streamlit App Service
-   After=network.target
+   Description=Streamlit App Service  # Descripción del servicio, indica que es una aplicación Streamlit
+
+   After=network.target  # Este servicio se iniciará después de que esté disponible la red
 
    [Service]
-   User=root
-   WorkingDirectory=/root/tesina
-   Environment="PATH=/root/tesina/entornotesina/bin"
-   ExecStart=/root/tesina/entornotesina/bin/streamlit run /root/tesina/interfazfinalpruebafinal.py
-   Restart=always
-   RestartSec=3
+   User=root  # El servicio se ejecutará con permisos de usuario root
+   WorkingDirectory=/root/tesina  # Directorio de trabajo para el servicio, donde se encuentra el script y el entorno virtual
+   Environment="PATH=/root/tesina/entornotesina/bin"  # Define la variable de entorno PATH para el entorno virtual
 
-   [Install]
-   WantedBy=multi-user.target
+   ExecStart=/root/tesina/entornotesina/bin/streamlit run /root/tesina/interfazfinalpruebafinal.py # Comando de inicio del servicio, ejecuta Streamlit         desde el entorno virtual especificado y corre la aplicación 'interfazfinalpruebafinal.py' ubicada en '/root/tesina'
+
+Restart=always  # Indica que el servicio se reiniciará automáticamente siempre que se detenga
+RestartSec=3  # Tiempo de espera entre reinicios, en este caso, 3 segundos
+
+[Install]
+WantedBy=multi-user.target  # Define en qué nivel de destino multiusuario debe instalarse este servicio
+
 
    ```
 
