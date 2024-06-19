@@ -27,7 +27,7 @@ Python 3: Asegúrate de tener instalado Python 3 en tu sistema.
 
 2. **Crea un entorno virtual:**
 
-   Es recomendable utilizar un entorno virtual para gestionar las dependencias del proyecto. Para crear un entorno virtual, navega hasta el directorio del proyecto clonado y ejecuta los siguientes comandos:
+Es recomendable utilizar un entorno virtual para gestionar las dependencias del proyecto. Para crear un entorno virtual, navega hasta el directorio del proyecto clonado y ejecuta los siguientes comandos:
 
 ```bash
    cd estacion_arduino
@@ -51,6 +51,7 @@ En Linux:
 
    ```bash
    sudo apt-get update
+   ```
 
 **Instalar Mosquitto y Mosquitto Clients:**
 ```bash
@@ -67,6 +68,7 @@ Habilitar Mosquitto como servicio:
 ```bash
     sudo systemctl start mosquitto
 ```
+
 **Verificación**
 
 Para verificar que Mosquitto está funcionando correctamente, puedes ejecutar los siguientes comandos:
@@ -84,6 +86,7 @@ Verificar el estado de Mosquitto:
 
    ```bash
    sudo apt-get update
+   ```
 
 **Instalar PostgreSQL y PostgreSQL Client:**
    ```bash
@@ -133,10 +136,10 @@ Conectarse a la base de datos y crear la tabla necesaria en PostgreSQL:
    ```sql
    CREATE DATABASE datos_estacion;
    CREATE USER karen WITH ENCRYPTED PASSWORD 'tucontraseña';
-   GRANT ALL PRIVILEGES ON DATABASE datos_estacion TO usuario;
+   GRANT ALL PRIVILEGES ON DATABASE datos_estacion TO tuusuario;
    ```
 
-Aquí, `datos_estacion` es el nombre de la base de datos y `usuario` es el nombre de usuario con privilegios para acceder y manipular la base de datos.
+Aquí, `datos_estacion` es el nombre de la base de datos y `tuusuario` es el nombre de usuario con privilegios para acceder y manipular la base de datos.
 
 3. **Conectarse a la base de datos `datos_estacion`:**
 
@@ -175,7 +178,7 @@ Para verificar que PostgreSQL está instalado y configurado correctamente, puede
   psql -h localhost -U usuario datos_estacion
   ```
 
-  Se te solicitará que ingreses la contraseña que estableciste para el usuario `karen`.
+  Se te solicitará que ingreses la contraseña que estableciste para el usuario `tuusuario`.
 
 - **Verificar la estructura de la tabla:**
 
@@ -209,7 +212,7 @@ Navega al directorio donde clonaste el repositorio:
 cd monitoreo-calidad-aire
 ```
 
-**Ejecuta la interfaz web con Streamlit:**
+**Ejecuta manualmente la interfaz web con Streamlit:**
 
 ```bash
 streamlit run interfazfinal.py
@@ -221,9 +224,9 @@ El servidor utilizado para este proyecto tiene la siguiente configuración:
 ```plaintext
  Ubuntu 24.04 LTS
 ```
-###  Ejecutar el proyecto como un servicio de sistema (daemon) en Ubuntu 24.04 LTS.
+###  Ejecutar el proyecto como un servicio de sistema (daemon).
 
-Esto garantizará que lan interfaz de monitoreo de calidad del aire se inicie automáticamente al arrancar el sistema y que se gestione de manera adecuada como un proceso de fondo.
+Esto garantizará que la interfaz de monitoreo de calidad del aire se inicie automáticamente al arrancar el sistema y que se gestione de manera adecuada como un proceso de fondo.
 ### Paso 1: Crear el Archivo de Servicio
 
 Es importante crear un archivo de servicio systemd. Este archivo le indicará al sistema cómo manejar la interfaz como un servicio.
@@ -238,7 +241,7 @@ Es importante crear un archivo de servicio systemd. Este archivo le indicará al
 
    ```plaintext
    [Unit]
-   Description=Streamlit App Service  # Descripción del servicio, indica que es una aplicación Streamlit
+   Description=Streamlit  # Descripción del servicio, indica que es una aplicación Streamlit
 
    After=network.target  # Este servicio se iniciará después de que esté disponible la red
 
@@ -247,13 +250,11 @@ Es importante crear un archivo de servicio systemd. Este archivo le indicará al
    WorkingDirectory=/root/tesina  # Directorio de trabajo para el servicio, donde se encuentra el script y el entorno virtual
    Environment="PATH=/root/tesina/entornotesina/bin"  # Define la variable de entorno PATH para el entorno virtual
 
-   ExecStart=/root/tesina/entornotesina/bin/streamlit run /root/tesina/interfazfinalpruebafinal.py # Comando de inicio del servicio, ejecuta Streamlit         desde el entorno virtual especificado y corre la aplicación 'interfazfinalpruebafinal.py' ubicada en '/root/tesina'
-
-Restart=always  # Indica que el servicio se reiniciará automáticamente siempre que se detenga
-RestartSec=3  # Tiempo de espera entre reinicios, en este caso, 3 segundos
-
-[Install]
-WantedBy=multi-user.target  # Define en qué nivel de destino multiusuario debe instalarse este servicio
+   ExecStart=/root/tesina/entornotesina/bin/streamlit run /root/tesina/interfazfinalpruebafinal.py # Comando de inicio del servicio, ejecuta Streamlit desde el entorno virtual especificado y corre la aplicación 'interfazfinalpruebafinal.py' ubicada en '/root/tesina'
+   Restart=always  # Indica que el servicio se reiniciará automáticamente siempre que se detenga
+   RestartSec=3  # Tiempo de espera entre reinicios, en este caso, 3 segundos
+   [Install]
+   WantedBy=multi-user.target  # Define en qué nivel de destino multiusuario debe instalarse este servicio
 
 
    ```
