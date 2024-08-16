@@ -255,7 +255,7 @@ if not df.empty:
 
         fig_ozone.update_layout(title='Lecturas de Ozono',
                                 xaxis_title='Fecha y Hora',
-                                yaxis_title='ppm',
+                                yaxis_title='ppb',
                                 xaxis=dict(
                                     rangeselector=dict(
                                             buttons=list([
