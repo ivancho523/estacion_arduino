@@ -302,6 +302,7 @@ sudo systemctl enable calidad_aire.service
 
 
 
+# Descripción de Imágenes
 
 
 
