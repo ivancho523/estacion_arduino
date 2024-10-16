@@ -311,37 +311,37 @@ A continuación se presentan las imágenes de la interfaz gráfica del prototipo
 ![Gráfico global](Imagenes/Gráfico%20global.png)
 Pestaña del gráfico general que muestra todas las variables recopiladas por el prototipo de calidad de aire.
 
-### 2. Gráfico de Temperatura y Humedad
-![Gráfico tempyhum](Imagenes/Gráfico%20tempyhum.png)
-Gráfico interactivo de temperatura y humedad con selección de intervalo de tiempo de tres horas del prototipo de calidad de aire.
-
-### 3. Gráfico de Monóxido de Carbono
-![GráficoCO](Imagenes/GráficoCO.png)
-Gráfico de Monóxido de Carbono con selección de intervalo de tiempo de 1 hora 20 minutos del prototipo de calidad de aire.
-
-### 4. Gráfico de Dióxido de Carbono
-![GráficoCO2](Imagenes/GráficoCO2.png)
-Gráfico de Dióxido de Carbono con selección de intervalo de tiempo de tres horas del prototipo de calidad de aire.
-
-### 5. Gráfico de Ozono
-![GráficoO3](Imagenes/GráficoO3.png)
-Gráfico de Ozono con selección de intervalo de tiempo del prototipo de calidad de aire.
-
-### 6. Pestaña Principal
+### 2. Pestaña Principal
 ![Pestaña principal](Imagenes/Pestaña%20principal.png)
 Pestaña principal de la interfaz gráfica que muestra los primeros 1000 datos recopilados en tiempo real por el prototipo de calidad de aire.
 
-### 7. Resumen de Temperatura y Humedad
+### 3. Gráfico de Temperatura y Humedad
+![Gráfico tempyhum](Imagenes/Gráfico%20tempyhum.png)
+Gráfico interactivo de temperatura y humedad con selección de intervalo de tiempo de tres horas del prototipo de calidad de aire.
+
+### 4. Resumen de Temperatura y Humedad
 ![Resumen(tempyhum)](Imagenes/Resumen(tempyhum).png)
 Resumen estadístico de los datos de temperatura y humedad.
 
-### 8. Resumen de Monóxido de Carbono
+### 5. Gráfico de Monóxido de Carbono
+![GráficoCO](Imagenes/GráficoCO.png)
+Gráfico de Monóxido de Carbono con selección de intervalo de tiempo de 1 hora 20 minutos del prototipo de calidad de aire.
+
+### 6. Resumen de Monóxido de Carbono
 ![ResumenCO](Imagenes/ResumenCO.png)
 Resumen estadístico de los datos de monóxido de carbono.
 
-### 9. Resumen de Dióxido de Carbono
+### 7. Gráfico de Dióxido de Carbono
+![GráficoCO2](Imagenes/GráficoCO2.png)
+Gráfico de Dióxido de Carbono con selección de intervalo de tiempo de tres horas del prototipo de calidad de aire.
+
+### 8. Resumen de Dióxido de Carbono
 ![ResumenCO2](Imagenes/ResumenCO2.png)
 Resumen estadístico de los datos de dióxido de carbono.
+
+### 9. Gráfico de Ozono
+![GráficoO3](Imagenes/GráficoO3.png)
+Gráfico de Ozono con selección de intervalo de tiempo del prototipo de calidad de aire.
 
 ### 10. Resumen de Ozono
 ![ResumenO3](Imagenes/ResumenO3.png)
