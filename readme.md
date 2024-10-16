@@ -311,7 +311,7 @@ A continuación se presentan las imágenes de la interfaz gráfica del prototipo
 ![Gráfico global](Imagenes/Gráfico%20global.png)
 Pestaña del gráfico general que muestra todas las variables recopiladas por el prototipo de calidad de aire.
 
-### 2. Pestaña Principal
+### 2. Tabla de datos
 ![Pestaña principal](Imagenes/Pestaña%20principal.png)
 Pestaña principal de la interfaz gráfica que muestra los primeros 1000 datos recopilados en tiempo real por el prototipo de calidad de aire.
 
