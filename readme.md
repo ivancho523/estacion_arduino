@@ -2,8 +2,6 @@
 
 Este proyecto permite monitorear y visualizar datos de calidad del aire en tiempo real utilizando sensores conectados a un dispositivo Arduino, utiliza un ESP32 para recibir datos desde el Arduino a través de comunicación serial y enviarlos a un servidor MQTT. Los datos son almacenados en una base de datos PostgreSQL. La interfaz web interactiva se desarrolla con Streamlit para facilitar la visualización y el análisis de los datos.
 
-**Configuración del Entorno**
-
 Requisitos Previos
 
 Python 3: Asegúrate de tener instalado Python 3 en tu sistema.
