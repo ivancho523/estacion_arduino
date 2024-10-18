@@ -133,7 +133,7 @@ Conectarse a la base de datos y crear la tabla necesaria en PostgreSQL:
 
    ```sql
    CREATE DATABASE datos_estacion;
-   CREATE USER karen WITH ENCRYPTED PASSWORD 'tucontraseña';
+   CREATE USER 'tuusuario' WITH ENCRYPTED PASSWORD 'tucontraseña';
    GRANT ALL PRIVILEGES ON DATABASE datos_estacion TO tuusuario;
    ```
 
@@ -173,7 +173,7 @@ Para verificar que PostgreSQL está instalado y configurado correctamente, puede
 - **Iniciar sesión en PostgreSQL como usuario creado:**
 
   ```bash
-  psql -h localhost -U usuario datos_estacion
+  psql -h localhost -U tuusuario datos_estacion
   ```
 
   Se te solicitará que ingreses la contraseña que estableciste para el usuario `tuusuario`.
@@ -302,7 +302,7 @@ sudo systemctl enable calidad_aire.service
 
 # Descripción de Imágenes
 
-A continuación se presentan las imágenes de la interfaz gráfica del prototipo de calidad de aire, junto con sus descripciones:
+A continuación se presentan las imágenes de la interfaz gráfica del prototipo de calidad de aire:
 ## Imágenes
 
 ### 1. Gráfico global
